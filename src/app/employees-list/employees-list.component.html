@@ -1,0 +1,37 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Employee_Name</th>
+      <th scope="col">Employee_Mail</th>
+      <th scope="col">Date_of_Birth</th>
+      <th scope="col">Mobile_Number</th>
+      <th scope="col">Address</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Password</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of Employee">
+      <th scope="row">{{ employee.eid }}</th>
+      <td>{{ employee.ename }}</td>
+      <td>{{ employee.eemail }}</td>
+      <td>{{ employee.edob }}</td>
+      <td>{{ employee.emobile }}</td>
+      <td>{{ employee.eaddress }}</td>
+      <td>{{ employee.edesig }}</td>
+      <td>{{ employee.esal }}</td>
+      <td>{{ employee.epass }}</td>
+      <td>
+        <button (click)="updateEmployee(employee.eid)" class="btn btn-info">
+          ✏️Update
+        </button>
+        <button (click)="deleteEmployee(employee.eid)" class="btn btn-info">
+          🗑️Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
